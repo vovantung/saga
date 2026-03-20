@@ -221,3 +221,25 @@
 2026-03-20 14:20:19.625 INFO  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Da xoa keycloak user, sagaId: 426e1a2e-1e85-414d-a6f9-4c43efae5867
 2026-03-20 14:21:32.870 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
 2026-03-20 14:21:33.170 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-20 18:46:55.199 INFO  [main] txu.saga.mainapp.MainAppApplication - Starting MainAppApplication using Java 18.0.2 with PID 5084 (D:\06-05-2025\saga\main-app\target\classes started by Precision 7540 in D:\06-05-2025\saga)
+2026-03-20 18:46:55.204 INFO  [main] txu.saga.mainapp.MainAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-20 18:46:56.872 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-03-20 18:46:56.878 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-03-20 18:46:56.925 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-03-20 18:46:57.632 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-20 18:46:57.650 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-20 18:46:57.653 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-20 18:46:57.654 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-03-20 18:46:57.761 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-20 18:46:57.763 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2500 ms
+2026-03-20 18:47:00.368 INFO  [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-03-20 18:47:00.644 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-20 18:47:00.708 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-20 18:47:01.088 INFO  [main] txu.saga.mainapp.MainAppApplication - Started MainAppApplication in 6.792 seconds (process running for 7.627)
+2026-03-20 18:58:00.829 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-20 18:58:00.829 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-20 18:58:00.832 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-03-20 19:07:43.509 INFO  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Created KeycloakUser, username: nnnmmppppttgfdesssskkkllly
+2026-03-20 19:07:47.335 INFO  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Da xoa keycloak user, sagaId: 3b1e658e-4e5b-45b1-aae6-775e093edd8f
+2026-03-20 19:10:19.418 INFO  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Created KeycloakUser, username: nnnmmppppttgfdesssskkkllly
+2026-03-20 19:10:23.255 INFO  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Created HR User. Hoàn thành saga tạo User trên keycloak và HR.
