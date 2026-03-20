@@ -1,0 +1,474 @@
+2026-03-20 00:25:28.381 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'saga.reply.queue' - trying to recover. Cause: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2026-03-20 12:54:14.360 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga reprare to delete KeycloakUser, keycloakUserId: f11037bc-953c-4bac-9e58-c837c7c83879
+2026-03-20 12:54:14.363 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.CommandProducer - Đã gui lenh xoa
+2026-03-20 12:54:14.934 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 12:54:15.961 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 12:54:16.973 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 12:54:17.998 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 12:54:19.008 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 12:54:20.022 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 12:54:21.054 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:10:11.992 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'saga.reply.queue' - trying to recover. Cause: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2026-03-20 13:10:48.583 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-2] o.s.j.l.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'saga.reply.queue' - trying to recover. Cause: Connection reset
+2026-03-20 13:14:28.730 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga reprare to delete KeycloakUser, keycloakUserId: 4fdc55bd-6b27-47ab-af3d-a6c9f7991d6e
+2026-03-20 13:14:28.733 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.CommandProducer - Đã gui lenh xoa
+2026-03-20 13:14:29.147 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:14:30.171 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:14:31.183 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:14:32.201 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:14:33.221 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:14:34.246 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:14:35.265 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:28:45.171 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga reprare to delete KeycloakUser, keycloakUserId: 2a6240d9-347d-4bb4-b201-c890ba64b475
+2026-03-20 13:28:45.174 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.CommandProducer - Đã gui lenh xoa
+2026-03-20 13:28:45.346 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:28:46.368 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:28:47.392 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:28:48.416 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:28:49.435 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:28:50.451 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:28:51.474 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
+	... 10 common frames omitted
+2026-03-20 13:37:17.432 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga chuan bi xoa keycloak user, sagaId: 375c4310-53d0-4cf7-a88d-80fecdc8022a, keycloakUserId: e38cf818-9c94-450a-9ab1-13554743216d
+2026-03-20 14:11:54.126 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga chuan bi xoa keycloak user, sagaId: 187ca708-7697-4049-9c6b-75c812e73fab, keycloakUserId: 0acd9836-3f3a-4468-a525-7072aeb8b668
+2026-03-20 14:20:19.448 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga tao HR user khong thanh cong, chuan bi xoa keycloak user, sagaId: 426e1a2e-1e85-414d-a6f9-4c43efae5867, keycloakUserId: a7a5baea-3e7c-4fbd-b6b1-c7bdead722a7
