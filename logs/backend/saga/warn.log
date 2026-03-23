@@ -1,7 +1,32 @@
-2026-03-20 00:25:28.381 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'saga.reply.queue' - trying to recover. Cause: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
-2026-03-20 12:54:14.360 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga reprare to delete KeycloakUser, keycloakUserId: f11037bc-953c-4bac-9e58-c837c7c83879
-2026-03-20 12:54:14.363 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.CommandProducer - Đã gui lenh xoa
-2026-03-20 12:54:14.934 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 21:40:48.505 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23 21:40:49.907 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 22:01:06.120 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23 22:01:07.528 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 22:04:29.115 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@323b0632 (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:04:53.133 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@7b619713 (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:34:30.253 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23 22:34:31.287 WARN  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sagaService': Injection of autowired dependencies failed
+2026-03-23 22:35:13.005 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23 22:35:14.007 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 22:37:01.364 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@7c433cbe (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:37:06.366 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@1e9d721 (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:40:49.245 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@760ae5c9 (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-03-23 23:06:35.205 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23 23:06:36.454 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 23:08:30.851 WARN  [http-nio-8080-exec-2] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:08:30.867 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:08:30.890 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:08:30.892 WARN  [http-nio-8080-exec-2] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:08:42.480 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -14,16 +39,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 12:54:15.961 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:08:46.655 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:08:46.660 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:08:48.945 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -36,16 +78,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 12:54:16.973 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:08:52.814 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:08:52.818 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:08:54.414 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -58,16 +117,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 12:54:17.998 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:08:57.234 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:08:57.235 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:08:57.245 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -80,16 +156,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 12:54:19.008 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:08:58.982 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:08:58.982 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:08:58.993 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -102,16 +195,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 12:54:20.022 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:09:00.559 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:09:00.559 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:09:02.091 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -124,16 +234,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 12:54:21.054 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:09:04.851 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:09:04.851 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:09:06.128 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -146,20 +273,43 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 13:10:11.992 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'saga.reply.queue' - trying to recover. Cause: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
-2026-03-20 13:10:48.583 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-2] o.s.j.l.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'saga.reply.queue' - trying to recover. Cause: Connection reset
-2026-03-20 13:14:28.730 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga reprare to delete KeycloakUser, keycloakUserId: 4fdc55bd-6b27-47ab-af3d-a6c9f7991d6e
-2026-03-20 13:14:28.733 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.CommandProducer - Đã gui lenh xoa
-2026-03-20 13:14:29.147 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:11:02.044 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23 23:11:03.072 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 23:12:49.058 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@767dced6 (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-03-23 23:17:58.273 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23 23:17:59.701 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 23:18:36.176 WARN  [http-nio-8080-exec-5] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:18:36.183 WARN  [http-nio-8080-exec-5] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:18:45.163 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:18:45.164 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:18:45.176 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -172,16 +322,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 13:14:30.171 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:18:46.192 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:18:46.193 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:18:46.212 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -194,16 +361,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 13:14:31.183 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:18:47.226 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:18:47.227 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:18:49.186 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -216,16 +400,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 13:14:32.201 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:18:50.205 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:18:50.206 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:18:52.228 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -238,16 +439,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 13:14:33.221 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:18:53.249 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:18:53.249 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:18:53.264 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -260,16 +478,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 13:14:34.246 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:18:54.284 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:18:54.285 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:18:54.293 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -282,16 +517,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 13:14:35.265 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
+2026-03-23 23:18:55.305 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1400, SQLState: 23000
+2026-03-23 23:18:55.305 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.saga.mainapp.service.SagaService - could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+2026-03-23 23:18:57.253 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
 org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
@@ -304,173 +556,33 @@ org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Liste
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
 	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
+Caused by: txu.common.exception.TxException: could not execute statement [ORA-01400: cannot insert NULL into ("TXU"."SAGA_INSTANCE"."SAGA_ID")
+
+https://docs.oracle.com/error-help/db/ora-01400/] [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; SQL [insert into saga_instance (created_at,current_step,status,saga_type,updated_at,saga_id) values (?,?,?,?,?,default)]; constraint [null]
+	at txu.saga.mainapp.service.SagaService.createOrUpdate(SagaService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at txu.saga.mainapp.service.SagaService$$SpringCGLIB$$0.createOrUpdate(<generated>)
+	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:42)
+	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:21)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
 	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
 	... 10 common frames omitted
-2026-03-20 13:28:45.171 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga reprare to delete KeycloakUser, keycloakUserId: 2a6240d9-347d-4bb4-b201-c890ba64b475
-2026-03-20 13:28:45.174 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.CommandProducer - Đã gui lenh xoa
-2026-03-20 13:28:45.346 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
-org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
-	... 10 common frames omitted
-2026-03-20 13:28:46.368 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
-org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
-	... 10 common frames omitted
-2026-03-20 13:28:47.392 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
-org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
-	... 10 common frames omitted
-2026-03-20 13:28:48.416 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
-org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
-	... 10 common frames omitted
-2026-03-20 13:28:49.435 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
-org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
-	... 10 common frames omitted
-2026-03-20 13:28:50.451 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
-org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
-	... 10 common frames omitted
-2026-03-20 13:28:51.474 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] o.s.j.l.DefaultMessageListenerContainer - Execution of JMS message listener failed, and no ErrorHandler has been set.
-org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method 'public void txu.saga.mainapp.service.MessageConsumer.onSagaReply(txu.common.saga.contract.command.SagaReplyEvent)' threw exception
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:118)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776)
-	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333)
-	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410)
-	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "txu.common.saga.contract.command.SagaReplyEvent.getPayload()" is null
-	at txu.saga.mainapp.service.MessageConsumer.handleSuccess(MessageConsumer.java:35)
-	at txu.saga.mainapp.service.MessageConsumer.onSagaReply(MessageConsumer.java:20)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
-	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110)
-	... 10 common frames omitted
-2026-03-20 13:37:17.432 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga chuan bi xoa keycloak user, sagaId: 375c4310-53d0-4cf7-a88d-80fecdc8022a, keycloakUserId: e38cf818-9c94-450a-9ab1-13554743216d
-2026-03-20 14:11:54.126 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga chuan bi xoa keycloak user, sagaId: 187ca708-7697-4049-9c6b-75c812e73fab, keycloakUserId: 0acd9836-3f3a-4468-a525-7072aeb8b668
-2026-03-20 14:20:19.448 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga tao HR user khong thanh cong, chuan bi xoa keycloak user, sagaId: 426e1a2e-1e85-414d-a6f9-4c43efae5867, keycloakUserId: a7a5baea-3e7c-4fbd-b6b1-c7bdead722a7
-2026-03-20 18:58:07.754 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga tao keycloak user khong thanh cong, sagaId: 44962f84-4268-4518-bbce-6141b05aa70a
-2026-03-20 19:07:46.288 WARN  [org.springframework.jms.JmsListenerEndpointContainer#0-1] t.s.mainapp.service.MessageConsumer - Saga tao HR user khong thanh cong, chuan bi xoa keycloak user, sagaId: 3b1e658e-4e5b-45b1-aae6-775e093edd8f, keycloakUserId: 00f62392-d96b-41cd-ac65-f59e76c3bef3
+2026-03-23 23:27:30.482 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@61ef5e97 (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-03-23 23:31:12.440 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@17e17343 (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-03-23 23:40:22.114 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23 23:40:23.170 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23 23:42:07.628 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@377f1502 (ORA-17008: Closed connection
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.

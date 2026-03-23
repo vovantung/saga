@@ -1,0 +1,3 @@
+2026-03-21 00:09:42.668 INFO  [org.springframework.jms.JmsListenerEndpointContainer#0-3] t.s.mainapp.service.MessageConsumer - Created HR User. Hoàn thành saga tạo User trên keycloak và HR.
+2026-03-21 00:14:50.414 INFO  [org.springframework.jms.JmsListenerEndpointContainer#0-3] t.s.mainapp.service.MessageConsumer - Created HR User. Hoàn thành saga tạo User trên keycloak và HR.
+2026-03-21 00:32:14.885 INFO  [org.springframework.jms.JmsListenerEndpointContainer#0-4] t.s.mainapp.service.MessageConsumer - Created KeycloakUser, username: vvvvv

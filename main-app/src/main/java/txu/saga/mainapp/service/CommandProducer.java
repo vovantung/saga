@@ -1,6 +1,7 @@
 package txu.saga.mainapp.service;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jms.core.JmsTemplate;
@@ -9,13 +10,16 @@ import txu.common.saga.contract.command.CreateHRUserCommand;
 import txu.common.saga.contract.command.CreateKeycloakUserCommand;
 import txu.common.saga.contract.command.DeleteUserKeycloakCommand;
 import txu.saga.mainapp.dto.*;
+import txu.saga.mainapp.entity.SagaEntity;
 
 @Component
-@AllArgsConstructor
+//@AllArgsConstructor
+@RequiredArgsConstructor
 public class CommandProducer {
 
     private static final Logger log = LoggerFactory.getLogger(CommandProducer.class);
     private final JmsTemplate jmsTemplate;
+    private final SagaService sagaService;
 
     public void sendCreateUserKeycloakCommand(String sagaId, CreateUserRequest req) {
         CreateKeycloakUserCommand cmd = new CreateKeycloakUserCommand();
@@ -31,6 +35,11 @@ public class CommandProducer {
             message.setStringProperty("_type", CreateKeycloakUserCommand.class.getName());
             return message;
         });
+
+        SagaEntity sagaInstance = new SagaEntity();
+        sagaInstance.setStatus("PROCESSING");
+        sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
+        sagaService.createOrUpdate(sagaInstance);
     }
 
     public void sendCreateHRUserCommand(String sagaId, String username, String email, String firstName, String lastName, Integer departmentId, String keycloakUserId) {
