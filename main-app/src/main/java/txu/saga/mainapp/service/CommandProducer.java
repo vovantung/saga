@@ -31,7 +31,7 @@ public class CommandProducer {
         sagaInstance.setStatus("RUNNING");
         sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
 //        sagaInstance.setPayload(req.toString());
-        sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
+        sagaInstance.setHistory(history);
         SagaEntity saga = sagaService.createOrUpdate(sagaInstance);
 
 

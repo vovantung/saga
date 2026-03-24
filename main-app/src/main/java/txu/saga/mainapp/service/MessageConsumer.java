@@ -34,13 +34,9 @@ public class MessageConsumer {
 
             SagaEntity saga = sagaService.getById(event.getSagaId());
 
-            byte[] data = saga.getHistory();
-            String content = new String(data, StandardCharsets.UTF_8);
-            String history = content +"HR_CREATE \t RUNNING" + System.lineSeparator();
-
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());
-            sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
+            sagaInstance.setHistory(saga.getHistory() +"HR_CREATE \t RUNNING" + System.lineSeparator());
             sagaInstance.setStatus("RUNNING");
             sagaInstance.setCurrentStep("HR_CREATE");
             sagaService.createOrUpdate(sagaInstance);
@@ -48,12 +44,9 @@ public class MessageConsumer {
         } else if ("HR_CREATE".equals(event.getStep())) {
             SagaEntity saga = sagaService.getById(event.getSagaId());
 
-            byte[] data = saga.getHistory();
-            String content = new String(data, StandardCharsets.UTF_8);
-            String history = content+ "HR_CREATE \t COMPLETED" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
-            sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
+            sagaInstance.setHistory(saga.getHistory() + "HR_CREATE \t COMPLETED" + System.lineSeparator());
             sagaInstance.setId(event.getSagaId());
             sagaInstance.setStatus("COMPLETED");
             sagaInstance.setCurrentStep("HR_CREATE");
@@ -63,14 +56,10 @@ public class MessageConsumer {
             log.info("Da xoa keycloak user, sagaId: {}",  event.getSagaId());
 
             SagaEntity saga = sagaService.getById(event.getSagaId());
-            byte[] data = saga.getHistory();
-            String content = new String(data, StandardCharsets.UTF_8);
-            String history = content+ "KEYCLOAK_DELETE \t COMPENSATED" + System.lineSeparator();
-
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());
-            sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
+            sagaInstance.setHistory(saga.getHistory() + "KEYCLOAK_DELETE \t COMPENSATED" + System.lineSeparator());
             sagaInstance.setStatus("COMPENSATED");
             sagaInstance.setCurrentStep("KEYCLOAK_DELETE");
             sagaService.createOrUpdate(sagaInstance);
@@ -83,13 +72,10 @@ public class MessageConsumer {
             log.warn("Saga tao keycloak user khong thanh cong, sagaId: {}",  event.getSagaId());
 
             SagaEntity saga = sagaService.getById(event.getSagaId());
-            byte[] data = saga.getHistory();
-            String content = new String(data, StandardCharsets.UTF_8);
-            String history = content + "KEYCLOAK_CREATE \t FAILED" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());
-            sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
+            sagaInstance.setHistory(saga.getHistory() + "KEYCLOAK_CREATE \t FAILED" + System.lineSeparator());
             sagaInstance.setStatus("FAILED");
             sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
             sagaService.createOrUpdate(sagaInstance);
@@ -99,13 +85,10 @@ public class MessageConsumer {
             commandProducer.sendDeleteUserKeycloakCommand(event.getSagaId() , (String) event.getPayload().get("keycloakUserId"));
 
             SagaEntity saga = sagaService.getById(event.getSagaId());
-            byte[] data = saga.getHistory();
-            String content = new String(data, StandardCharsets.UTF_8);
-            String history = content+  "KEYCLOAK_DELETE \t COMPENSATING" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());
-            sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
+            sagaInstance.setHistory(saga.getHistory() + "KEYCLOAK_DELETE \t COMPENSATING" + System.lineSeparator());
             sagaInstance.setStatus("COMPENSATING");
             sagaInstance.setCurrentStep("KEYCLOAK_DELETE");
             sagaService.createOrUpdate(sagaInstance);
@@ -113,13 +96,10 @@ public class MessageConsumer {
             log.warn("Xoa keycloak user khong thanh cong, sagaId: {}",  event.getSagaId());
 
             SagaEntity saga = sagaService.getById(event.getSagaId());
-            byte[] data = saga.getHistory();
-            String content = new String(data, StandardCharsets.UTF_8);
-            String history = content+ "KEYCLOAK_DELETE \t FAILED" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());
-            sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
+            sagaInstance.setHistory(saga.getHistory() + "KEYCLOAK_DELETE \t FAILED" + System.lineSeparator());
             sagaInstance.setStatus("FAILED");
             sagaInstance.setCurrentStep("KEYCLOAK_DELETE");
             sagaService.createOrUpdate(sagaInstance);

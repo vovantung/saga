@@ -17,21 +17,21 @@ public class SagaEntity implements Serializable {
     @Column(name = "ID")
     private Integer id;
 
-    @Getter
+
     @Column(name = "STATUS")
     private String status;
 
-    @Getter
+
     @Column(name = "CURRENT_STEP")
     private String currentStep;
 
-    @Getter
-    @Column(name = "HISTORY")
-    private byte[] history;
 
-    @Getter
-    @Column(name = "PAYLOAD")
-    private byte[] payload;
+    @Column(name = "HISTORY")
+    private String history;
+
+//    @Getter
+//    @Column(name = "PAYLOAD")
+//    private byte[] payload;
 
 
 //    @ManyToOne
@@ -39,7 +39,7 @@ public class SagaEntity implements Serializable {
 ////    @JsonIgnore
 //    private DepartmentEntity department;
 
-    @Getter
+
     @Column(name = "CREATED_AT")
     private Date createdAt;
 //    public String getCreatedAt() {
@@ -47,10 +47,10 @@ public class SagaEntity implements Serializable {
 //        return createdAt.toInstant().atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("[dd/MM/yyyy]"));
 //    }
 
-    @Getter
+
     @Column(name = "UPDATED_AT")
     private Date updateAt;
-    @Getter
+
     @Column(name = "COMPLETED_AT")
     private Date completedAt;
 
