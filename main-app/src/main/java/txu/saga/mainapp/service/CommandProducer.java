@@ -21,25 +21,31 @@ public class CommandProducer {
     private final JmsTemplate jmsTemplate;
     private final SagaService sagaService;
 
-    public void sendCreateUserKeycloakCommand(Integer sagaId, CreateUserRequest req) {
+    public SagaEntity sendCreateUserKeycloakCommand(CreateUserRequest req) {
+
+        SagaEntity sagaInstance = new SagaEntity();
+        sagaInstance.setStatus("RUNNING");
+        sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
+        SagaEntity saga = sagaService.createOrUpdate(sagaInstance);
+
+        if(saga == null) {
+            return null;
+        }
+
         CreateKeycloakUserCommand cmd = new CreateKeycloakUserCommand();
-        cmd.setSagaId(sagaId);
+        cmd.setSagaId(saga.getId());
         cmd.setUsername(req.getUsername());
         cmd.setEmail(req.getEmail());
         cmd.setFirstName(req.getFirstName());
         cmd.setLastName(req.getLastName());
         cmd.setDepartmentId(req.getDepartmentId());
         cmd.setRoles(req.getRoles());
-
         jmsTemplate.convertAndSend("keycloak.create.user.queue", cmd, message -> {
             message.setStringProperty("_type", CreateKeycloakUserCommand.class.getName());
             return message;
         });
 
-        SagaEntity sagaInstance = new SagaEntity();
-        sagaInstance.setStatus("RUNNING");
-        sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
-        sagaService.createOrUpdate(sagaInstance);
+        return saga;
     }
 
     public void sendCreateHRUserCommand(Integer sagaId, String username, String email, String firstName, String lastName, Integer departmentId, String keycloakUserId) {

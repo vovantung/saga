@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CreateUserResponse {
-    private String sagaId;
+    private Integer sagaId;
     private String status;
 }
