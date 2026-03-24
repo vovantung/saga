@@ -12,6 +12,8 @@ import txu.common.saga.contract.command.DeleteUserKeycloakCommand;
 import txu.saga.mainapp.dto.*;
 import txu.saga.mainapp.entity.SagaEntity;
 
+import java.nio.charset.StandardCharsets;
+
 @Component
 //@AllArgsConstructor
 @RequiredArgsConstructor
@@ -26,8 +28,8 @@ public class CommandProducer {
         SagaEntity sagaInstance = new SagaEntity();
         sagaInstance.setStatus("RUNNING");
         sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
-        sagaInstance.setPayload(req.toString());
-        sagaInstance.setHistory("KEYCLOAK_CREATE\t RUNNING\r\n");
+//        sagaInstance.setPayload(req.toString());
+        sagaInstance.setHistory("KEYCLOAK_CREATE\t RUNNING\r\n".getBytes(StandardCharsets.UTF_8));
         SagaEntity saga = sagaService.createOrUpdate(sagaInstance);
 
 

@@ -27,11 +27,11 @@ public class SagaEntity implements Serializable {
 
     @Getter
     @Column(name = "HISTORY")
-    private String history;
+    private byte[] history;
 
     @Getter
     @Column(name = "PAYLOAD")
-    private String payload;
+    private byte[] payload;
 
 
 //    @ManyToOne
