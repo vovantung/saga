@@ -36,7 +36,7 @@ public class MessageConsumer {
 
             byte[] data = saga.getHistory();
             String content = new String(data, StandardCharsets.UTF_8);
-            String history = "HR_CREATE \t RUNNING" + System.lineSeparator();
+            String history = content +"HR_CREATE \t RUNNING" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());
@@ -50,7 +50,7 @@ public class MessageConsumer {
 
             byte[] data = saga.getHistory();
             String content = new String(data, StandardCharsets.UTF_8);
-            String history = "HR_CREATE \t COMPLETED" + System.lineSeparator();
+            String history = content+ "HR_CREATE \t COMPLETED" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
@@ -65,7 +65,7 @@ public class MessageConsumer {
             SagaEntity saga = sagaService.getById(event.getSagaId());
             byte[] data = saga.getHistory();
             String content = new String(data, StandardCharsets.UTF_8);
-            String history = "KEYCLOAK_DELETE \t COMPENSATED" + System.lineSeparator();
+            String history = content+ "KEYCLOAK_DELETE \t COMPENSATED" + System.lineSeparator();
 
 
             SagaEntity sagaInstance = new SagaEntity();
@@ -85,7 +85,7 @@ public class MessageConsumer {
             SagaEntity saga = sagaService.getById(event.getSagaId());
             byte[] data = saga.getHistory();
             String content = new String(data, StandardCharsets.UTF_8);
-            String history = "KEYCLOAK_CREATE \t FAILED" + System.lineSeparator();
+            String history = content + "KEYCLOAK_CREATE \t FAILED" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());
@@ -101,7 +101,7 @@ public class MessageConsumer {
             SagaEntity saga = sagaService.getById(event.getSagaId());
             byte[] data = saga.getHistory();
             String content = new String(data, StandardCharsets.UTF_8);
-            String history = "KEYCLOAK_DELETE \t COMPENSATING" + System.lineSeparator();
+            String history = content+  "KEYCLOAK_DELETE \t COMPENSATING" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());
@@ -115,7 +115,7 @@ public class MessageConsumer {
             SagaEntity saga = sagaService.getById(event.getSagaId());
             byte[] data = saga.getHistory();
             String content = new String(data, StandardCharsets.UTF_8);
-            String history = "KEYCLOAK_DELETE \t FAILED" + System.lineSeparator();
+            String history = content+ "KEYCLOAK_DELETE \t FAILED" + System.lineSeparator();
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());

@@ -71,6 +71,8 @@ public class SagaService {
                 sagaInstance.setStatus(sagaEntity.getStatus());
             }
 
+            sagaInstance.setHistory(sagaEntity.getHistory());
+
             sagaInstance.setUpdateAt(DateTime.now().toDate());
 
             try {
@@ -82,9 +84,7 @@ public class SagaService {
         } else {
             throw new NotFoundException("Saga instance not found");
         }
-
     }
-
 
     //    @Transactional
     public SagaEntity getById(Integer id) {
