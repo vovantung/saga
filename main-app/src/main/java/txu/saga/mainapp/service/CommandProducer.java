@@ -21,7 +21,7 @@ public class CommandProducer {
     private final JmsTemplate jmsTemplate;
     private final SagaService sagaService;
 
-    public void sendCreateUserKeycloakCommand(String sagaId, CreateUserRequest req) {
+    public void sendCreateUserKeycloakCommand(Integer sagaId, CreateUserRequest req) {
         CreateKeycloakUserCommand cmd = new CreateKeycloakUserCommand();
         cmd.setSagaId(sagaId);
         cmd.setUsername(req.getUsername());
@@ -37,12 +37,12 @@ public class CommandProducer {
         });
 
         SagaEntity sagaInstance = new SagaEntity();
-        sagaInstance.setStatus("PROCESSING");
+        sagaInstance.setStatus("RUNNING");
         sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
         sagaService.createOrUpdate(sagaInstance);
     }
 
-    public void sendCreateHRUserCommand(String sagaId, String username, String email, String firstName, String lastName, Integer departmentId, String keycloakUserId) {
+    public void sendCreateHRUserCommand(Integer sagaId, String username, String email, String firstName, String lastName, Integer departmentId, String keycloakUserId) {
 
         CreateHRUserCommand cmd = new CreateHRUserCommand();
         cmd.setSagaId(sagaId);
@@ -59,7 +59,7 @@ public class CommandProducer {
         });
     }
 
-    public void sendDeleteUserKeycloakCommand(String sagaId, String keycloakUserId) {
+    public void sendDeleteUserKeycloakCommand(Integer sagaId, String keycloakUserId) {
         DeleteUserKeycloakCommand cmd = new DeleteUserKeycloakCommand();
         cmd.setSagaId(sagaId);
         cmd.setKeycloakUserId(keycloakUserId);

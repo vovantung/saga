@@ -31,20 +31,23 @@ public class MessageConsumer {
                     (String) event.getPayload().get("firstName"), (String) event.getPayload().get("lastName"), (Integer) event.getPayload().get("departmentId"), (String) event.getPayload().get("keycloakUserId"));
 
             SagaEntity sagaInstance = new SagaEntity();
-            sagaInstance.setStatus("PROCESSING");
+            sagaInstance.setId(event.getSagaId());
+            sagaInstance.setStatus("RUNNING");
             sagaInstance.setCurrentStep("HR_CREATE");
             sagaService.createOrUpdate(sagaInstance);
 
         } else if ("HR_CREATE".equals(event.getStep())) {
             SagaEntity sagaInstance = new SagaEntity();
-            sagaInstance.setStatus("COMPLETE");
+            sagaInstance.setId(event.getSagaId());
+            sagaInstance.setStatus("COMPLETED");
             sagaInstance.setCurrentStep("HR_CREATE");
             sagaService.createOrUpdate(sagaInstance);
             log.info("Created HR User. Hoàn thành saga tạo User trên keycloak và HR.");
         } else if ("KEYCLOAK_DELETE".equals(event.getStep())) {
-            log.info("Da xoa keycloak user, sagaId: {}", (String) event.getPayload().get("sagaId"));
+            log.info("Da xoa keycloak user, sagaId: {}",  event.getPayload().get("sagaId"));
             SagaEntity sagaInstance = new SagaEntity();
-            sagaInstance.setStatus("FAILED");
+            sagaInstance.setId(event.getSagaId());
+            sagaInstance.setStatus("COMPENSATED");
             sagaInstance.setCurrentStep("KEYCLOAK_DELETE");
             sagaService.createOrUpdate(sagaInstance);
             // Thêm ghi chú "saga hoàn tất delete keycloak"
@@ -53,29 +56,32 @@ public class MessageConsumer {
 
     private void handleFailure(SagaReplyEvent event) {
         if ("KEYCLOAK_CREATE".equals(event.getStep())) {
-            log.warn("Saga tao keycloak user khong thanh cong, sagaId: {}", (String) event.getPayload().get("sagaId"));
+            log.warn("Saga tao keycloak user khong thanh cong, sagaId: {}",  event.getPayload().get("sagaId"));
 
             SagaEntity sagaInstance = new SagaEntity();
+            sagaInstance.setId(event.getSagaId());
             sagaInstance.setStatus("FAILED");
             sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
             sagaService.createOrUpdate(sagaInstance);
             // Thêm ghi chú "saga hoàn không can compensation"
         } else if ("HR_CREATE".equals(event.getStep())) {
             log.warn("Saga tao HR user khong thanh cong, chuan bi xoa keycloak user, sagaId: {}, keycloakUserId: {}", (String) event.getPayload().get("sagaId"), (String) event.getPayload().get("keycloakUserId"));
-            commandProducer.sendDeleteUserKeycloakCommand((String) event.getPayload().get("sagaId"), (String) event.getPayload().get("keycloakUserId"));
+            commandProducer.sendDeleteUserKeycloakCommand((Integer) event.getPayload().get("sagaId"), (String) event.getPayload().get("keycloakUserId"));
 
             SagaEntity sagaInstance = new SagaEntity();
-            sagaInstance.setStatus("COMPENSATION");
+            sagaInstance.setId(event.getSagaId());
+            sagaInstance.setStatus("COMPENSATING");
             sagaInstance.setCurrentStep("KEYCLOAK_DELETE");
             sagaService.createOrUpdate(sagaInstance);
         } else if ("KEYCLOAK_DELETE".equals(event.getStep())) {
-            log.warn("Xoa keycloak user khong thanh cong, sagaId: {}", (String) event.getPayload().get("sagaId"));
+            log.warn("Xoa keycloak user khong thanh cong, sagaId: {}",  event.getPayload().get("sagaId"));
 
             SagaEntity sagaInstance = new SagaEntity();
+            sagaInstance.setId(event.getSagaId());
             sagaInstance.setStatus("FAILED");
             sagaInstance.setCurrentStep("KEYCLOAK_DELETE");
             sagaService.createOrUpdate(sagaInstance);
-            // Thêm ghi chú "saga không hoàn tất delete keycloak"
+            // Thêm ghi chú "saga không hoàn tất delete keycloak, hoac thu lai cho den khi hoan thanh buoc buf tru"
         }
     }
 }
