@@ -9,7 +9,9 @@ import txu.saga.mainapp.dto.*;
 
 import txu.saga.mainapp.entity.SagaEntity;
 import txu.saga.mainapp.service.CommandProducer;
+import txu.saga.mainapp.service.SagaService;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -20,6 +22,7 @@ import java.util.UUID;
 public class Api extends AbstractApi {
 
     private final CommandProducer commandProducer;
+    private final SagaService sagaService;
 
     @PostMapping("/users")
     public ResponseEntity<CreateUserResponse> createUser(@RequestBody CreateUserRequest req) {
@@ -31,4 +34,14 @@ public class Api extends AbstractApi {
         response.setStatus("PROCESSING");
         return ResponseEntity.accepted().body(response);
     }
+    @GetMapping("/{id}")
+    public SagaEntity getById(@PathVariable Integer id) {
+        return sagaService.getById(id);
+    }
+
+    @GetMapping("")
+    public List<SagaEntity> getLimit() {
+        return sagaService.getLimit(100);
+    }
+
 }

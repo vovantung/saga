@@ -26,18 +26,25 @@ public class SagaDao extends AbstractDao<SagaEntity> {
         return super.findById(Id);
     }
 
-    @Transactional
-    public void remove(SagaEntity accountEntity) {
-        accountEntity = merge(accountEntity);
-        getEntityManager().remove(accountEntity);
+//    @Transactional
+//    public void remove(SagaEntity accountEntity) {
+//        accountEntity = merge(accountEntity);
+//        getEntityManager().remove(accountEntity);
+//    }
+
+    public List<SagaEntity> getLimit(int limit) {
+        StringBuilder queryString = new StringBuilder("SELECT A FROM SagaEntity AS A ORDER BY A.createdAt DESC");
+        Query query = getEntityManager().createQuery(queryString.toString());
+        query.setMaxResults(limit);
+        return getRessultList(query);
     }
 
-    public SagaEntity getByUsername(String username) {
-        StringBuilder queryString = new StringBuilder("SELECT A FROM AccountEntity AS A WHERE username=:username");
-        Query query = getEntityManager().createQuery(queryString.toString());
-        query.setParameter("username", username);
-        return getSingle(query);
-    }
+//    public SagaEntity getByUsername(String username) {
+//        StringBuilder queryString = new StringBuilder("SELECT A FROM AccountEntity AS A WHERE username=:username");
+//        Query query = getEntityManager().createQuery(queryString.toString());
+//        query.setParameter("username", username);
+//        return getSingle(query);
+//    }
 
 //    public AccountEntity getByEmail(String email) {
 //        StringBuilder queryString = new StringBuilder("SELECT A FROM AccountEntity AS A WHERE email=:email");

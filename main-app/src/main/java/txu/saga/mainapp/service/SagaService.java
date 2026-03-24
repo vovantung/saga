@@ -94,6 +94,10 @@ public class SagaService {
         }
         return saga;
     }
+
+    public List<SagaEntity> getLimit(int limit) {
+        return sagaDao.getLimit(limit);
+    }
 //
 //    public List<AccountEntity> getWithLimit(int limit) {
 //        return accountDao.getWithLimit(limit);
