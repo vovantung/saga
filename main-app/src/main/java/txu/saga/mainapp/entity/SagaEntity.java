@@ -25,6 +25,15 @@ public class SagaEntity implements Serializable {
     @Column(name = "CURRENT_STEP")
     private String currentStep;
 
+    @Getter
+    @Column(name = "HISTORY")
+    private String history;
+
+    @Getter
+    @Column(name = "PAYLOAD")
+    private String payload;
+
+
 //    @ManyToOne
 //    @JoinColumn(name = "DEPARTMENT_ID")
 ////    @JsonIgnore

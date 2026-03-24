@@ -86,14 +86,14 @@ public class SagaService {
     }
 
 
-//    //    @Transactional
-//    public AccountEntity getByUsername(String username) {
-//        AccountEntity user = accountDao.getByUsername(username);
-//        if (user == null) {
-//            throw new NotFoundException("User is not found");
-//        }
-//        return user;
-//    }
+    //    @Transactional
+    public SagaEntity getById(Integer id) {
+        SagaEntity saga = sagaDao.findById(id);
+        if (saga == null) {
+            throw new NotFoundException("User is not found");
+        }
+        return saga;
+    }
 //
 //    public List<AccountEntity> getWithLimit(int limit) {
 //        return accountDao.getWithLimit(limit);
