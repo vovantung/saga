@@ -25,11 +25,13 @@ public class CommandProducer {
 
     public SagaEntity sendCreateUserKeycloakCommand(CreateUserRequest req) {
 
+        String history = "KEYCLOAK_CREATE\tRUNNING" + System.lineSeparator();
+
         SagaEntity sagaInstance = new SagaEntity();
         sagaInstance.setStatus("RUNNING");
         sagaInstance.setCurrentStep("KEYCLOAK_CREATE");
 //        sagaInstance.setPayload(req.toString());
-        sagaInstance.setHistory("KEYCLOAK_CREATE\t RUNNING\r\nABC\r\n".getBytes(StandardCharsets.UTF_8));
+        sagaInstance.setHistory(history.getBytes(StandardCharsets.UTF_8));
         SagaEntity saga = sagaService.createOrUpdate(sagaInstance);
 
 
