@@ -39,9 +39,10 @@ public class Api extends AbstractApi {
         return sagaService.getById(id);
     }
 
-    @GetMapping("")
+    @PostMapping("")
     public List<SagaEntity> getLimit() {
-        return sagaService.getLimit(100);
+        List<SagaEntity> sagaEntities = sagaService.getLimit(100);
+        return sagaEntities;
     }
 
 }

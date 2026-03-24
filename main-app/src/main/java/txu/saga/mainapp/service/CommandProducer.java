@@ -13,6 +13,9 @@ import txu.saga.mainapp.dto.*;
 import txu.saga.mainapp.entity.SagaEntity;
 
 import java.nio.charset.StandardCharsets;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Component
 //@AllArgsConstructor
@@ -24,8 +27,9 @@ public class CommandProducer {
     private final SagaService sagaService;
 
     public SagaEntity sendCreateUserKeycloakCommand(CreateUserRequest req) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-        String history = "KEYCLOAK_CREATE\tRUNNING" + System.lineSeparator();
+        String history = LocalDateTime.now().format(formatter) + ": {step: Keycloak_Create, status: Running}" + System.lineSeparator();
 
         SagaEntity sagaInstance = new SagaEntity();
         sagaInstance.setStatus("RUNNING");
