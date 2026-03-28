@@ -5,27 +5,30 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Entity
 @Setter
-@Getter
+//@Getter
 @Table(name = "SAGA")
 public class SagaEntity implements Serializable {
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
 
-
+    @Getter
     @Column(name = "STATUS")
     private String status;
 
-
+    @Getter
     @Column(name = "CURRENT_STEP")
     private String currentStep;
 
-
+    @Getter
     @Column(name = "HISTORY")
     private String history;
 
@@ -42,16 +45,21 @@ public class SagaEntity implements Serializable {
 
     @Column(name = "CREATED_AT")
     private Date createdAt;
-//    public String getCreatedAt() {
-////        return createdAt.toInstant().atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("[dd/MM/yyyy] HH:mm:ss"));
+    public String getCreatedAt() {
+        return createdAt.toInstant().atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("[dd/MM/yyyy] HH:mm:ss"));
 //        return createdAt.toInstant().atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("[dd/MM/yyyy]"));
-//    }
-
+    }
 
     @Column(name = "UPDATED_AT")
     private Date updateAt;
 
+    public String getUpdateAt() {
+        return createdAt.toInstant().atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("[dd/MM/yyyy] HH:mm:ss"));
+    }
     @Column(name = "COMPLETED_AT")
     private Date completedAt;
+    public String getCompleteddAt() {
+        return createdAt.toInstant().atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("[dd/MM/yyyy] HH:mm:ss"));
+    }
 
 }
