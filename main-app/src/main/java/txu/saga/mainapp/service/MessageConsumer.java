@@ -34,7 +34,7 @@ public class MessageConsumer {
         if ("KEYCLOAK_CREATE".equals(event.getStep())) {
             log.info("Created KeycloakUser, username: {}", (String) event.getPayload().get("username"));
             commandProducer.sendCreateHRUserCommand(event.getSagaId(), (String) event.getPayload().get("username"), (String) event.getPayload().get("email"),
-                    (String) event.getPayload().get("firstName"), (String) event.getPayload().get("lastName"), (Long) event.getPayload().get("departmentId"), (String) event.getPayload().get("keycloakUserId"));
+                    (String) event.getPayload().get("firstName"), (String) event.getPayload().get("lastName"), (Integer) event.getPayload().get("departmentId"), (String) event.getPayload().get("keycloakUserId"));
 
             SagaEntity sagaInstance = new SagaEntity();
             sagaInstance.setId(event.getSagaId());

@@ -12,6 +12,6 @@ public class CreateUserRequest {
     String email;
     String lastName;
     String firstName;
-    Long departmentId;
+    Integer departmentId;
     List<String> roles;
 }

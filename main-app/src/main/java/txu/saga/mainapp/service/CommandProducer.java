@@ -59,7 +59,7 @@ public class CommandProducer {
         return saga;
     }
 
-    public void sendCreateHRUserCommand(Integer sagaId, String username, String email, String firstName, String lastName, Long departmentId, String keycloakUserId) {
+    public void sendCreateHRUserCommand(Integer sagaId, String username, String email, String firstName, String lastName, Integer departmentId, String keycloakUserId) {
 
         CreateHRUserCommand cmd = new CreateHRUserCommand();
         cmd.setSagaId(sagaId);
